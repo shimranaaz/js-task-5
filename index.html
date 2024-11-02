@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Card List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Space Grotesk", sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("459-background.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            flex-wrap: wrap;
+            padding-top: 20vh;
+            background-attachment: fixed;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            height: 60vh;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        div#cardContainer {
+            width: 100%;
+        }
+        .card {
+            border: 2px solid aqua;
+            width: 200px;
+            height: 255px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            gap: 30px;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            background-color: transparent;
+            color: white;
+            padding: 12px 12px;
+            border: 2px solid aqua;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: aqua;
+            color: #000;
+        }
+        .footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .text {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: #fff;
+            padding: 12px;
+            height: 14vh;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 4px solid #40E0D0;
+            z-index: 1000;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        .social-icons i {
+            color: aqua;
+            cursor: pointer;
+            font-size: 22px;
+        }
+        .text1 span {
+            color: aqua;
+        }
+        .text img {
+            width: 13%;
+            object-fit: cover;
+        }
+        h3 {
+            color: #fff;
+            font-size: 20px;
+        }
+        @media(max-width:820px){
+            .text img {
+            width: 38%;
+            object-fit: cover;
+        }
+        .social-icons i {
+            font-size: 28px;
+        }
+        }
+        @media(max-width:768px){
+            .text img {
+            width: 38%;
+            object-fit: cover;
+        }
+        .social-icons i {
+            font-size: 28px;
+        }
+        }
+        @media(max-width:414px) {
+            .text img {
+                width: 50%;
+                object-fit: cover;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            .card{
+                width: 233px;
+                height: 300px;
+            }
+        }
+        @media(max-width:390px) {
+            .text img {
+                width: 50%;
+                object-fit: cover;
+            }
+            h3 {
+                font-size: 22px;
+            }
+        }
+        @media(max-width:344px) {
+            .text img {
+                width: 50%;
+                object-fit: cover;
+            }
+            h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        <img src="Black_Yellow_Illustrative_Photography_Logo-removebg-preview.png" alt="">
+        <div class="social-icons">
+            <a href="https://facebook.com"> <i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com"> <i class="fa-brands fa-twitter"></i></a>
+            <a href="https://instagram.com"> <i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+    <div id="cardContainer" class="card-container"></div>
+    <script>
+        class Card {
+            constructor() {
+                this.cardsData = [
+                    {
+                        title: "Basic Calculator",
+                        description: "This is a responsive calculator app created using HTML, CSS, and JavaScript. It performs essential arithmetic operations like addition, subtraction, multiplication, and division. Designed for ease of use, it features a clean interface and works on both desktop and mobile devices.",
+                        url: "https://basic-calculator-shimra.netlify.app/",
+                        image: "calculator.png"
+                    },
+                    {
+                        title: "Search Engine",
+                        description: "A dynamic web application designed to help users find their perfect dresses effortlessly. This dress shop search engine allows users to search for various styles, colors, and sizes, providing a seamless shopping experience. With an intuitive interface and responsive design. Built using HTML, CSS, and JavaScript.",
+                        url: "https://berrylush-shimra.netlify.app/",
+                        image: "search engine.png"
+                    },
+                    {
+                        title: "Palindrome Checker",
+                        description: "An intuitive web application that allows users to determine if a given word, phrase, or number is a palindrome. With a simple and user-friendly interface, the app checks for palindromic sequences while ignoring spaces, punctuation, and capitalization. Built with HTML, CSS, and JavaScript.",
+                        url: "https://palindrome-checker-shimra.netlify.app/",
+                        image: "palindrome.png"
+                    },
+                    {
+                        title: "Analog and Digital clock",
+                        description: " A sleek and responsive digital clock application that displays the current time in a modern format. Featuring real-time updates, users can easily keep track of hours, minutes, and seconds. Designed with a minimalist interface using HTML, CSS, and JavaScript.",
+                        url: "https://digital-clock-shimra.netlify.app/",
+                        image: "digital clock.png"
+                    },
+                    {
+                        title: "Rock paper scissors game",
+                        description: " A fun web-based version of the classic game where players challenge the computer by selecting rock, paper, or scissors. Built with HTML, CSS, and JavaScript, this engaging app offers a simple and entertaining experience for all ages.",
+                        url: "https://rock-paper-scissor-game-shimra.netlify.app/",
+                        image: "game.png"
+                    },
+                    {
+                        title: "To-do List",
+                        description: "A user-friendly web application designed to help individuals manage their tasks effectively. Users can add, edit, and delete tasks, keeping their to-do list organized and up-to-date. With a clean and intuitive interface built using HTML, CSS, and JavaScript, this app enhances productivity by allowing users to prioritize and track their daily activities seamlessly.",
+                        url: "https://to-do-list-shimra.netlify.app/",
+                        image: "to-do-list.png"
+                    },
+                    {
+                        title: "Weather App",
+                        description: " A responsive web application that provides real-time weather updates for locations around the world. Users can search for their city to view current conditions, including temperature, humidity, and forecasts. Built with HTML, CSS, and JavaScript, this app utilizes API data to deliver accurate weather information, making it easy for users to stay informed about the weather in their area or anywhere they plan to visit.",
+                        url: "https://weather-app-shimra.netlify.app/",
+                        image: "weather.png"
+                    },
+                    {
+                        title: "Movie Database",
+                        description: "An interactive web application for exploring a vast collection of movies. Users can search for films, view ratings and summaries, and watch trailers. Built with HTML, CSS, and JavaScript, this app offers a user-friendly interface and utilizes API data to provide up-to-date movie information, perfect for discovering new favorites.",
+                        url: "https://movie-app-shimra.netlify.app/",
+                        image: "movie.png"
+                    },
+                    {
+                        title: "Github User Search",
+                        description: "A web application that allows users to search for GitHub repositories, users, and issues. With a responsive interface, it leverages the GitHub API to provide real-time results, making it a valuable tool for developers and tech enthusiasts to discover and engage with open-source projects.",
+                        url: "https://github-search-shimra.netlify.app/",
+                        image: "github.png"
+                    },
+                    {
+                        title: "Quiz Game",
+                        description: "An engaging web application that tests users’ knowledge across various topics through interactive quizzes. Players can answer multiple-choice questions and receive immediate feedback on their performance. Built with HTML, CSS, and JavaScript, this app features a user-friendly interface and dynamic question sets, making learning fun and competitive.",
+                        url: "https://quiz-game-shimra.netlify.app/",
+                        image: "quiz.png"
+                    }
+                ];
+            }
+            createCardElement(title, description, url, image) {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                const detailUrl = `detail.html?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&url=${encodeURIComponent(url)}&image=${encodeURIComponent(image)}`;
+                cardDiv.innerHTML = `
+                    <h3>${title}</h3>
+                    <a href="${detailUrl}">
+                        <button>View Details</button>
+                    </a>
+                `;
+                return cardDiv;
+            }
+            displayCards() {
+                const container = document.getElementById('cardContainer');
+                this.cardsData.forEach(card => {
+                    container.appendChild(this.createCardElement(card.title, card.description, card.url, card.image));
+                });
+            }
+        }
+        const singleCard = new Card();
+        singleCard.displayCards();
+    </script>
+</body>
+</html>
